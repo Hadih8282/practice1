@@ -6,5 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'practice1';
+  username: string ="";
+  password: string = "";
+  rytypePassword: string ='';
+  isPasswordsmatch: boolean = false;
+
+  public onUsernameInputChange(e: Event) {
+    this.username = (<HTMLInputElement>e.target).value;
+  }
+
+  public onPasswordInputChange(e: Event) {
+    this.password = (<HTMLInputElement>e.target).value;
+  }
+
+  public onRytypePasswordChange(e: Event) {
+    this.rytypePassword = (<HTMLInputElement>e.target).value;
+
+    // if ( this.password !== this.rytypePassword) {
+    //   this.isPasswordsmatch = false;
+    // } else{
+    //   this.isPasswordsmatch = true;
+    // }
+
+
+    this.isPasswordsmatch = this.password !== this.rytypePassword ? false : true;
+
+  }
+
+
+
 }
